@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM | ME</title>
+  </head>
+  <body>
+    <div
+      style="
+        border: solid;
+        border-radius: 15px;
+        background-color: bisque;
+        width: 300px;
+        margin: auto;
+        margin-top: 15%;
+      "
+      class="localClock"
+    >
+      <h1
+        style="
+          background-color: gray;
+          color: white;
+          text-align: center;
+          margin-left: 10px;
+          margin-right: 10px;
+          border-radius: 10px;
+        "
+      >
+        Choose your color
+      </h1>
+      <div
+        style="
+          margin: auto;
+          margin-top: 10%;
+          display: flex;
+          gap: 10px;
+          justify-content: center;
+        "
+      >
+        <button
+          style="
+            cursor: pointer;
+            border-radius: 10px;
+            border: solid white 5px;
+            width: 50px;
+            height: 50px;
+            background-color: rgb(94, 230, 189);
+          "
+          class="button"
+          id="black"
+        ></button>
+        <button
+          style="
+            cursor: pointer;
+            border-radius: 10px;
+            border: solid white 5px;
+            width: 50px;
+            height: 50px;
+            background-color: gray;
+          "
+          class="button"
+          id="gray"
+        ></button>
+        <button
+          style="
+            cursor: pointer;
+            border-radius: 10px;
+            border: solid white 5px;
+            width: 50px;
+            height: 50px;
+            background-color: yellow;
+          "
+          class="button"
+          id="yellow"
+        ></button>
+        <button
+          style="
+            cursor: pointer;
+            border: solid white 5px;
+            border-radius: 10px;
+            width: 50px;
+            height: 50px;
+            background-color: pink;
+          "
+          class="button"
+          id="pink"
+        ></button>
+      </div>
+      <div
+        style="
+          width: 200px;
+          height: 50px;
+          background-color: orange;
+          color: aliceblue;
+          border-radius: 15px;
+          margin: auto;
+          margin-top: 20%;
+          font-size: 25px;
+          text-align: center;
+          padding-top: 20px;
+        "
+        id="clock"
+      ></div>
+      <h1 style="text-align: center">Local Clock</h1>
+    </div>
+  </body>
+  <script>
+    const time = document.getElementById("clock");
+
+    setInterval(function () {
+      let currentTime = new Date();
+
+      document.querySelector("#clock").innerHTML =
+        currentTime.toLocaleTimeString();
+    }, 1000);
+
+    //Color-scheme
+    const buttons = document.querySelectorAll(".button");
+    const clockBg = document.querySelector(".localClock");
+    console.log(clockBg);
+    console.log(buttons);
+    buttons.forEach(function (button) {
+      button.addEventListener("click", function (e) {
+        console.log(e);
+        console.log(e.target);
+        if (e.target.id === "black") {
+          clockBg.style.backgroundColor = e.target.style.backgroundColor;
+        }
+        if (e.target.id === "yellow") {
+          clockBg.style.backgroundColor = e.target.style.backgroundColor;
+        }
+        if (e.target.id === "gray") {
+          clockBg.style.backgroundColor = e.target.style.backgroundColor;
+        }
+        if (e.target.id === "pink") {
+          clockBg.style.backgroundColor = e.target.style.backgroundColor;
+        }
+      });
+    });
+  </script>
+</html>
