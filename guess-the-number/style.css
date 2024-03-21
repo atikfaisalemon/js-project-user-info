@@ -1,0 +1,32 @@
+#upperContent {
+  text-align: center;
+  margin: auto;
+  background-color: rgb(46, 45, 45);
+  width: 700px;
+  padding: 10px;
+  border-radius: 15px;
+  color: white;
+  margin-top: 10%;
+}
+
+body {
+  background-color: aqua;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 50px;
+}
+
+.s-title {
+  font-size: 25px;
+}
+
+.geussField {
+  background-color: transparent;
+}
+.guessSubmit {
+}
